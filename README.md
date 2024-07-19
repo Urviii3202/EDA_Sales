@@ -1,14 +1,15 @@
+
 # Data Analysis with Pandas and Visualization Libraries
 
 This repository contains Python code for data analysis and visualization using pandas, matplotlib, seaborn, numpy, and scikit-learn.
 
 ## Overview
 
-The script data_analysis.py performs several operations on the dataset sales.csv. Here’s a breakdown of what each section of the code does:
+The script `data_analysis.py` performs several operations on the dataset `sales.csv`. Here’s a breakdown of what each section of the code does:
 
 ### 1. Importing Libraries and Loading Data
 
-python
+```python
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -16,11 +17,11 @@ import numpy as np
 
 # Load the dataset
 x = pd.read_csv("sales.csv")
-
+```
 
 ### 2. Exploring the Dataset
 
-python
+```python
 # Renaming columns for clarity
 x.columns = ['Year', 'Product', 'line', 'Product.1', 'type', 'Product.2', 'Order', 'method', 'type.1', 'Retailer', 'country', 'Revenue']
 
@@ -50,11 +51,11 @@ print(x.isnull().sum())
 x['country'][3] = None
 print(x.isnull())
 print(x.isnull().sum())
-
+```
 
 ### 3. Data Preprocessing and Visualization
 
-python
+```python
 # Encoding categorical variables (e.g., 'Year')
 from sklearn.preprocessing import LabelEncoder
 labelencoder = LabelEncoder()
@@ -88,20 +89,20 @@ from sklearn import preprocessing
 X = x[['Year', 'Revenue']]
 y = preprocessing.normalize(X)
 print(y[:5])
-
+```
 
 ## Running the Code
 
 To run the code:
 
 1. Ensure you have Python installed on your system.
-2. Install necessary libraries: pandas, matplotlib, seaborn, numpy, and scikit-learn.
-3. Place your dataset sales.csv in the same directory as data_analysis.py.
+2. Install necessary libraries: `pandas`, `matplotlib`, `seaborn`, `numpy`, and `scikit-learn`.
+3. Place your dataset `sales.csv` in the same directory as `data_analysis.py`.
 4. Execute the script:
 
-   bash
+   ```bash
    python data_analysis.py
-   
+   ```
 
 ## Notes
 
